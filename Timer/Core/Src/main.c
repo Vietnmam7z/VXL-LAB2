@@ -93,7 +93,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int status = 1;
+  int status = 0;
   timer1_flag = 1;
   HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin,  GPIO_PIN_RESET);
   HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
@@ -102,46 +102,14 @@ int main(void)
   Display7Seg(1);
   while (1)
   {
-      if (timer1_flag == 1) {
-          switch (status) {
-              case 1:
-                  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
-                  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
-                  Display7Seg(1);
-                  break;
-              case 2:
-                  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
-                  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
-                  Display7Seg(2);
-                  break;
-              case 3:
-                  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
-                  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
-                  Display7Seg(3);
-                  break;
-              case 4:
-                  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-                  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET);
-                  Display7Seg(0);
-                  break;
-              default:
-                  break;
-          }
-          status++;
-          if (status > 4) {
-              status = 1;
-          }
-          setTimer1(50);
+	  if(timer1_flag == 1){
+	  update7SEG(status);
+	  status++;
+      if (status > 3) {
+              status = 0;
+      }
+      setTimer1(50);
 	  }
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
