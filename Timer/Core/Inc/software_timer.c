@@ -6,7 +6,7 @@
  */
 #include "software_timer.h"
 #include "main.h"
-float timer1_counter = 0.0;
+int timer1_counter = 0;
 int timer1_flag = 0;
 void setTimer1(int duration){
 	timer1_counter = duration;
@@ -284,7 +284,7 @@ const int MAX_LED_MATRIX = 8;
      // Giả sử bạn sử dụng các chân GPIOA cho các cột
      GPIOA->ODR &= ~(1 << col);
  }
-void displayA(int counter){
+ void displayA(int counter){
 		if(counter == 0){
 			InitMatrix();
 		}

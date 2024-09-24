@@ -111,11 +111,45 @@ int main(void)
     HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, GPIO_PIN_RESET);
     int counter = 0;
+    int counter2 = 3;
+    int counter3 = 4;
+    int flag = 0;
+    setTimer1(100);
     while (1)
     {
-    	displayA(counter);
-    	if(counter > 7) counter = 0;
-    	counter++;
+    	if(timer1_flag == 1){
+    		displayA(counter);
+    		counter++;
+    		if(counter > 2){
+    			counter = 0;
+    			flag++;
+    		}
+    	}
+    	if(flag ==  1){
+    		displayA(counter2);
+    		counter2++;
+    		if(counter > 3){
+    			counter2 = 2;
+    			flag++;
+    		}
+    	}
+    	if(flag ==  2){
+    		displayA(counter3);
+    		counter3++;
+    		if(counter3 > 6){
+    			counter3 = 0;
+    			flag = 3;
+    		}
+    	}
+    	if(flag == 3){
+    		displayA(counter);
+    		counter++;
+    		if(counter > 7){
+    			counter = 0;
+    			flag = 0;
+    		}
+    		setTimer1(100);
+    	}
     	HAL_Delay(1);
 
     /* USER CODE END WHILE */

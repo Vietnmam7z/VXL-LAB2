@@ -4,7 +4,6 @@
  *  Created on: 19 Sep 2024
  *      Author: Genki
  */
-#include "main.h"
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 extern int timer1_flag;
