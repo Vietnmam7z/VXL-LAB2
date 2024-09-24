@@ -4,7 +4,7 @@
  *  Created on: 19 Sep 2024
  *      Author: Genki
  */
-
+#include "main.h"
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 extern int timer1_flag;
@@ -13,5 +13,7 @@ void setTimer1(int duration);
 void timerRun(void);
 void Display7Seg(int x);
 void updateLEDMatrix(int index);
+void InitMatrix(void);
+
 void displayA(int counter);
 #endif /* INC_SOFTWARE_TIMER_H_ */

@@ -65,8 +65,8 @@ all: main-build
 main-build: Timer.elf secondary-outputs
 
 # Tool invocations
-Timer.elf: $(OBJS) $(USER_OBJS) C:\Mac\Home\Downloads\LAB1\TIMER\Timer\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Timer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Mac\Home\Downloads\LAB1\TIMER\Timer\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Timer.elf: $(OBJS) $(USER_OBJS) G:\VXL\LAB2\Timer\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Timer.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"G:\VXL\LAB2\Timer\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

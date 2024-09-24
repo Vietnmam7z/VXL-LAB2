@@ -2,4 +2,6 @@ software_timer.c:11:6:setTimer1	16	static
 software_timer.c:15:6:timerRun	8	static
 software_timer.c:23:6:Display7Seg	16	static
 software_timer.c:118:7:updateLEDMatrix	16	static
-software_timer.c:266:6:displayA	24	static
+software_timer.c:265:7:InitMatrix	8	static
+software_timer.c:283:7:DeactivateColumn	16	static
+software_timer.c:287:6:displayA	16	static
