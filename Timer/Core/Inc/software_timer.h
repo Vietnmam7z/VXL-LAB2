@@ -13,5 +13,5 @@ void setTimer1(int duration);
 void timerRun(void);
 void Display7Seg(int x);
 void updateLEDMatrix(int index);
-
+void displayA(int counter);
 #endif /* INC_SOFTWARE_TIMER_H_ */
