@@ -110,9 +110,10 @@ int main(void)
     HAL_GPIO_WritePin(ROW5_GPIO_Port, ROW5_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, GPIO_PIN_SET);
+    int counter = 0;
     while (1)
     {
-    	updateLEDMatrix(0);
+    	runA();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
