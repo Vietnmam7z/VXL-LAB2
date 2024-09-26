@@ -281,7 +281,6 @@ const int MAX_LED_MATRIX = 8;
 	    HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, GPIO_PIN_RESET);
  }
  void DeactivateColumn(uint8_t col) {
-     // Giả sử bạn sử dụng các chân GPIOA cho các cột
      GPIOA->ODR &= ~(1 << col);
  }
  void displayA(int counter){
