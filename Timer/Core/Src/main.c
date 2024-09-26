@@ -114,7 +114,7 @@ int main(void)
       if (status > 3) {
               status = 0;
       }
-      setTimer1(100);
+      setTimer1(25);
 	  }
     /* USER CODE BEGIN 3 */
   }

@@ -855,8 +855,8 @@ int main(void)
  80006b4:	2300      	movs	r3, #0
  80006b6:	607b      	str	r3, [r7, #4]
       }
-      setTimer1(100);
- 80006b8:	2064      	movs	r0, #100	; 0x64
+      setTimer1(25);
+ 80006b8:	2019      	movs	r0, #25
  80006ba:	f7ff fd47 	bl	800014c <setTimer1>
 	  if(timer2_flag == 1){
  80006be:	e7e1      	b.n	8000684 <main+0x68>
