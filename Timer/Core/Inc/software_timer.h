@@ -8,9 +8,14 @@
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 extern int timer1_flag;
+extern int timer2_flag;
+extern int hour;
+extern int minute;
+extern int second;
 void setTimer1(int duration);
+void setTimer2(int duration);
 void timerRun(void);
 void Display7Seg(int x);
 void update7SEG(int index);
-
+void updateClockBuffer(void);
 #endif /* INC_SOFTWARE_TIMER_H_ */
